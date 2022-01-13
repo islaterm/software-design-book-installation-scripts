@@ -1,3 +1,4 @@
+Import-Module "$PSScriptRoot\pwsh-fun\Utility.ps1"
 $ORIGINAL_ERROR_ACTION = $ErrorActionPreference
 
 <#
@@ -21,21 +22,6 @@ function Script:Test-Command {
   } finally {
     $ErrorActionPreference = $ORIGINAL_ERROR_ACTION
   } 
-}
-
-<#
-.SYNOPSIS
-  Checks if an application is installed on the system.
-.PARAMETER ProcessName
-  The name of the process that identifies the application.
-#>
-function Script:Test-Application {
-  param (
-    [Parameter(Mandatory = $true, ValueFromPipeline = $true)]
-    [String]
-    $ProcessName
-  )
-  Get-WmiObject -Class Win32_Process | Where-Object { $_.Name -eq $ProcessName }
 }
 
 <#
