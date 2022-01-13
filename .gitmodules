@@ -1,0 +1,3 @@
+[submodule "pwsh-fun"]
+	path = pwsh-fun
+	url = https://github.com/r8vnhill/pwsh-fun.git
